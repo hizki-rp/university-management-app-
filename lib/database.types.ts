@@ -1,0 +1,108 @@
+export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[]
+
+export interface Database {
+  public: {
+    Tables: {
+      countries: {
+        Row: {
+          id: number
+          name: string
+          code: string
+          is_schengen: boolean | null
+          is_eu: boolean | null
+          region: string | null
+          display_order: number | null
+          created_at: string | null
+        }
+        Insert: {
+          id?: number
+          name: string
+          code: string
+          is_schengen?: boolean | null
+          is_eu?: boolean | null
+          region?: string | null
+          display_order?: number | null
+          created_at?: string | null
+        }
+        Update: {
+          id?: number
+          name?: string
+          code?: string
+          is_schengen?: boolean | null
+          is_eu?: boolean | null
+          region?: string | null
+          display_order?: number | null
+          created_at?: string | null
+        }
+      }
+      universities: {
+        Row: {
+          id: number
+          country_id: number | null
+          name: string
+          tuition_fees_bachelor: number | null
+          tuition_fees_master: number | null
+          application_fee: number | null
+          admission_start_date: string | null
+          admission_deadline: string | null
+          admission_requirements: string | null
+          bachelor_programs: string[] | null
+          master_programs: string[] | null
+          english_requirements: string | null
+          acceptance_rate: number | null
+          website_url: string | null
+          description: string | null
+          created_at: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          id?: number
+          country_id?: number | null
+          name: string
+          tuition_fees_bachelor?: number | null
+          tuition_fees_master?: number | null
+          application_fee?: number | null
+          admission_start_date?: string | null
+          admission_deadline?: string | null
+          admission_requirements?: string | null
+          bachelor_programs?: string[] | null
+          master_programs?: string[] | null
+          english_requirements?: string | null
+          acceptance_rate?: number | null
+          website_url?: string | null
+          description?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          id?: number
+          country_id?: number | null
+          name?: string
+          tuition_fees_bachelor?: number | null
+          tuition_fees_master?: number | null
+          application_fee?: number | null
+          admission_start_date?: string | null
+          admission_deadline?: string | null
+          admission_requirements?: string | null
+          bachelor_programs?: string[] | null
+          master_programs?: string[] | null
+          english_requirements?: string | null
+          acceptance_rate?: number | null
+          website_url?: string | null
+          description?: string | null
+          created_at?: string | null
+          updated_at?: string | null
+        }
+      }
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      [_ in never]: never
+    }
+    Enums: {
+      [_ in never]: never
+    }
+  }
+}
